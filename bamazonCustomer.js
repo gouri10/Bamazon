@@ -38,14 +38,14 @@ function start() {
                 }
             ]).then(function (answer) {
 
-                console.log(answer.buy_item_id + ": " + answer.buy_item_quantity);
+                //console.log(answer.buy_item_id + ": " + answer.buy_item_quantity);
                 var product = res.find(x => x.item_id === answer.buy_item_id);
-                console.log(product);
+                //console.log(product);
 
                 if (product.stock_quantity >= answer.buy_item_quantity) {
                     //update the product
                     var quantity=product.stock_quantity-answer.buy_item_quantity;                    
-                    console.log("Updating the stock quantity to: "+ quantity);
+                    console.log("Updating the stock quantity of product "+answer.buy_item_id +" to: "+ quantity);
                     
                     var query=connection.query(
                         "UPDATE products SET ? WHERE ?",
@@ -66,7 +66,7 @@ function start() {
 
                     // logs the actual query being run
                     //console.log(query.sql);
-                     console.log(query.sql);
+                     //console.log(query.sql);
                      connection.end();
 
                 }

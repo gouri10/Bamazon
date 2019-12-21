@@ -152,7 +152,7 @@ function AddNewProduct() {
                     product_name: answer.productName,
                     department_name: answer.departmentName,
                     price: answer.price,
-                    stock_quantity: answer.stock_quantity
+                    stock_quantity: answer.quantity
                 },
                 function (err) {
                     if (err) throw err;
